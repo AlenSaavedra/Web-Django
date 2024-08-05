@@ -107,7 +107,7 @@ WSGI_APPLICATION = "djangocrud.wsgi.application"
 
 DATABASES = {
     "default": dj_database_url.config(
-        default=os.getenv("DATABASE_URL", "mysql://root:262002@localhost:3306/misitio"),
+        default=os.getenv("DATABASE_URL"),
         conn_max_age=600,
     )
 }
