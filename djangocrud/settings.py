@@ -13,9 +13,6 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
-import pymysql
-
-pymysql.install_as_MySQLdb()
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -96,18 +93,10 @@ WSGI_APPLICATION = "djangocrud.wsgi.application"
 
 # Database 2 documentation https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     "default": dj_database_url.config(
-# Replace this value with your local database's connection string.
-#        default="postgresql://postgres:postgres@localhost:5432/mysite",
-#        conn_max_age=600,
-#    )
-# }
-# Database 3 Mysql
-
 DATABASES = {
     "default": dj_database_url.config(
-        default=os.getenv("DATABASE_URL"),
+        # Replace this value with your local database's connection string.
+        default="postgresql://postgres:postgres@localhost:5432/mysite",
         conn_max_age=600,
     )
 }
